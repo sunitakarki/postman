@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "45a1b09f-5bc7-408f-8971-c7074b19e294",
+		"name": "DemoAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "GetUserList Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96ccb62a-2b36-4214-8bc7-9a3385d3f60e",
+								"exec": [
+									"\r",
+									"pm.test(\"Verify status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "05f01931-da1f-4db5-a2a3-35fcbac4d994",
+								"exec": [
+									"console.log('This is a log')\r",
+									"console.info('This is an info')\r",
+									"console.warn('This is a warn')\r",
+									"console.error('This is an error')\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f6b02075-1f7a-4245-9cb4-558e9e5c3ac6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/users/2"
+					},
+					"response": []
+				}
+			],
+			"id": "113a51a2-f566-4273-aa74-a52467e21074",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "67a5c23b-7c73-4401-a7c0-1403b33544fc",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.environment.get(\"variable_key\");\r",
+							"pm.globals.get(\"variable_key\");\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"pm.collectionVariables.get(\"variable_key\");\r",
+							"pm.collectionVariables.get(\"variable_key\");\r",
+							"pm.globals.set(\"variable_key\", \"variable_value\");\r",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");\r",
+							"pm.environment.unset(\"variable_key\");\r",
+							"pm.globals.unset(\"variable_key\");\r",
+							"pm.collectionVariables.unset(\"variable_key\");\r",
+							"try {\r",
+							"    const response = await pm.sendRequest({\r",
+							"        url: \"https://postman-echo.com/get\",\r",
+							"        method: \"GET\"\r",
+							"    });\r",
+							"\r",
+							"    console.log(response.json());\r",
+							"} catch (err) {\r",
+							"    console.error(err);\r",
+							"}\r",
+							"pm.collectionVariables.unset(\"variable_key\");\r",
+							"pm.globals.unset(\"variable_key\");\r",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");\r",
+							"try {\r",
+							"    const response = await pm.sendRequest({\r",
+							"        url: \"https://postman-echo.com/get\",\r",
+							"        method: \"GET\"\r",
+							"    });\r",
+							"\r",
+							"    console.log(response.json());\r",
+							"} catch (err) {\r",
+							"    console.error(err);\r",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "982869a0-ead4-428f-9a31-74829806e82d",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "GetUserList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ccb62a-2b36-4214-8bc7-9a3385d3f60e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"console.log(\"Hello World...\")\r",
+							"//Setting Variables\r",
+							"pm.globals.set('name', 'Rutherford');\r",
+							"pm.collectionVariables.set('name','Ramanujan');\r",
+							"pm.environment.set('name','Newton') ;\r",
+							"pm.variables.set('name', 'Eddie');\r",
+							"\r",
+							"//Getting Variables\r",
+							"console.log(pm.globals.get('name'));\r",
+							"console.log(pm.collectionVariables.get('name'));\r",
+							"console.log(pm.environment.get('name'));\r",
+							"console.log(pm.variables.get('name'));\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "da4779da-7e12-415b-bec1-c88e89766871",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fdee9e12-6854-4584-9e8e-dc7e732a08c8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "9524b7f8-e2e2-4c38-969d-eccd6b63b03e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sunita\",\r\n    \"job\": \"Automation Test Engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"id": "4604d585-17b6-4827-8cd5-183d2b471a86",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sunita\",\r\n    \"job\": \"Test Automation Engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "PartiallyUpdateUser",
+			"id": "608ca1d9-99f3-4161-830f-276a4ac7e54d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"id": "18a54648-b8f8-494d-a898-061f0844bc74",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "d01fb55c-096c-4796-868e-b1bc8d8ceee3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser",
+			"id": "1f9ecb0c-0b81-4e45-81ea-45bb0dc5aa56",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/{{endpoint}}"
+			},
+			"response": []
+		},
+		{
+			"name": "AuthDemo",
+			"id": "340fba94-f696-41dc-8e62-f6ddbb9b1498",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://api.github.com/user/repos"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5bf64f21-7dce-42eb-891c-92bda35a78bf",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3096e845-0bd1-4567-8b68-77c0510dd210",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://reqres.in/api",
+			"type": "string"
+		},
+		{
+			"key": "name",
+			"value": ""
+		}
+	]
+}
