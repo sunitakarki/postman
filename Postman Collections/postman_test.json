@@ -320,6 +320,29 @@
 				"url": "https://api.github.com/user/repos"
 			},
 			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/register",
+			"id": "5e7d9b2c-1ade-416d-8447-69c1758bb7c7",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sydney@fife\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/register"
+			},
+			"response": []
 		}
 	],
 	"event": [
