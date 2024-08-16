@@ -126,6 +126,9 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
+							"const response = pm.response.json();\r",
+							"\r",
+							"\r",
 							"console.log(\"Hello World...\")\r",
 							"//Setting Variables\r",
 							"pm.globals.set('name', 'Rutherford');\r",
@@ -149,8 +152,12 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"packages": {},
-						"type": "text/javascript"
+						"id": "ca7fd633-aae9-4f8f-8c1c-e66bc33d7d0e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
