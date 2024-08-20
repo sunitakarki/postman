@@ -385,6 +385,10 @@
 		{
 			"key": "name",
 			"value": ""
+		},
+		{
+			"key": "variable_key",
+			"value": ""
 		}
 	]
 }
